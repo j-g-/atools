@@ -1,18 +1,16 @@
 <mat-card>
   <mat-card-title>
-    [FIFA-FO: Jose] 
+    [FIFA-FO: Agent] 
   </mat-card-title>
   <mat-card-content>
     Caller: <b>{{note.caller}}</b> <br>
     CBR: <b>{{note.callbackPhoneNumber}}</b><br>
-    <b>{{note.auth? "Authenticated": "Not authenticated."}}</b> <span *ngIf="note.auth == true"> with <b>{{note.authInfo}}</b>.</span> <br>
+    <b>{{note.auth? "Authenticated": "Not authenticated."}}</b>
+    <span *ngIf="note.auth == true"> with <b>{{note.authInfo}}</b>.</span> <br>
     <b>[CALL DETAILS]</b>:<br>
-    <div class="comments-box">
-    {{note.comments}}
-    </div>
+    <div class="comments-box">{{note.comments}}</div>
     <br>
     <b>[SALE INFO]</b>:<br>
-    New Units: HS(HS75,Unl,Norton),TV(V2:YP6),HP(HP)<br>
     [CALLBACK INFO]:<br>
     Agreed to follow up on MM/DD/YYYY between: no time specified. <br>
   </mat-card-content>
