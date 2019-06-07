@@ -3,15 +3,24 @@
 <div id="callback-editor">
   <!-- <textarea name="note-text" id="note-text" rows="10"></textarea> -->
   <!-- <div id="note-text"></div> -->
-  <mat-checkbox>Use same info</mat-checkbox>
+  <mat-checkbox [(ngModel)]="currentNote.requiresFollowUp">Requires Follow up</mat-checkbox>
+  <mat-checkbox [(ngModel)]="callbackInfo.useSameInfo">Use same info</mat-checkbox>
   <div></div>
   <div class="grid4">
     <mat-form-field>
-      <input  type="text" matInput placeholder="Contact"/>
+      <input  type="text" matInput placeholder="Contact" [(ngModel)]="callbackInfo.contact"/>
     </mat-form-field>
     <button mat-icon-button ><mat-icon>file_copy</mat-icon></button>
     <mat-form-field>
-      <input  type="tel" matInput placeholder="CBR"/>
+      <input  type="tel" matInput placeholder="CBR" [(ngModel)]="callbackInfo.callbackPhoneNumber"/>
+    </mat-form-field>
+    <button mat-icon-button ><mat-icon>file_copy</mat-icon></button>
+    <mat-form-field>
+      <input  type="date" matInput placeholder="Date" [(ngModel)]="callbackInfo.date"/>
+    </mat-form-field>
+    <button mat-icon-button ><mat-icon>file_copy</mat-icon></button>
+    <mat-form-field>
+      <input  type="text" matInput placeholder="Acc. Ref" [(ngModel)]="callbackInfo.accRef"/>
     </mat-form-field>
     <button mat-icon-button ><mat-icon>file_copy</mat-icon></button>
     <div id="quick-date-options">
@@ -35,21 +44,21 @@
 
     </div>
     <mat-form-field>
-      <input  type="date" matInput placeholder="Date"/>
+      <input  type="time" matInput placeholder="Time window start" [(ngModel)]="callbackInfo.cbWindowStartTime"/>
     </mat-form-field>
     <button mat-icon-button ><mat-icon>file_copy</mat-icon></button>
     <mat-form-field>
-      <input  type="time" matInput placeholder="Time"/>
+      <input  type="time" matInput placeholder="Time window end" [(ngModel)]="callbackInfo.cbWindowEndTime"/>
     </mat-form-field>
     <button mat-icon-button ><mat-icon>file_copy</mat-icon></button>
   </div>
   <div class="comments-container">
     <mat-form-field>
-      <textarea  matInput placeholder="Comments" rows="4"></textarea>
+      <textarea  matInput placeholder="Comments" rows="4" [(ngModel)]="callbackInfo.comments"></textarea>
     </mat-form-field>
     <button mat-icon-button ><mat-icon>file_copy</mat-icon></button>
   </div>
   <mat-checkbox>AB </mat-checkbox>
   <mat-checkbox>BC </mat-checkbox>
-  <mat-checkbox>Completed </mat-checkbox>
+  <mat-checkbox  [(ngModel)]="callbackInfo.completed">Completed </mat-checkbox>
 </div>

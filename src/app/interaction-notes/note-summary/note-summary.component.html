@@ -1,17 +1,28 @@
-<mat-card>
-  <mat-card-title>
-    [DEPT: Agent] 
-  </mat-card-title>
-  <mat-card-content>
-    Caller: <b>{{note.caller}}</b> <br>
-    CBR: <b>{{note.callbackPhoneNumber}}</b><br>
-    <b>{{note.auth? "Authenticated": "Not authenticated."}}</b>
-    <span *ngIf="note.auth == true"> with <b>{{note.authInfo}}</b>.</span> <br>
-    <b>[CALL DETAILS]</b>:<br>
-    <div class="comments-box">{{note.comments}}</div>
-    <br>
-    <b>[SALE INFO]</b>:<br>
-    [CALLBACK INFO]:<br>
-    Agreed to follow up on MM/DD/YYYY between: no time specified. <br>
-  </mat-card-content>
-  </mat-card>
+<div class="grid2">
+  <div class="element">
+    <mat-card>
+      <mat-card-title>
+        Summary
+      </mat-card-title>
+      <mat-card-content>
+        <div id="summary-text">[DEPT: Agent]<br>
+        Caller: <b>{{note.caller}}</b> <br>
+        CBR: <b>{{note.callbackPhoneNumber}}</b><br>
+        <b>{{note.auth? "Authenticated": "Not authenticated."}}</b>
+        <span *ngIf="note.auth == true"> with <b>{{note.authInfo}}</b>.</span> <br>
+        <b>[CALL DETAILS]</b>:<br>
+        <div class="comments-box">{{note.comments}}</div>
+        <br>
+        <div *ngIf="note.requiresFollowUp">
+        [CALLBACK INFO]:<br>
+        Agreed to follow up on {{note.callbackInfo.date}} between: no time specified. <br>
+        </div>
+        <b>[SALE INFO]</b>:<br>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="element">
+    <button tabindex="-1" mat-icon-button (click)="copySummaryToClipboard()"><mat-icon>file_copy</mat-icon></button>
+  </div>
+</div>

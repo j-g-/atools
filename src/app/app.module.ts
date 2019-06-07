@@ -10,13 +10,12 @@ import { SaleEditorComponent } from './sale-details/sale-editor/sale-editor.comp
 import { AngularMaterialImportsModule } from "./angular-material-imports/angular-material-imports.module";
 import { InteractionNotesModule } from "./interaction-notes/interaction-notes.module";
 import { CallbackDetailsModule } from './callback-details/callback-details.module';
+import { SaleDetailsModule } from './sale-details/sale-details.module';
 //import { MatIcon } from "@angular/material";
 
 @NgModule({
   declarations: [
     AppComponent,
-    NoteEditorComponent,
-    SaleEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +24,7 @@ import { CallbackDetailsModule } from './callback-details/callback-details.modul
     AngularMaterialImportsModule,
     InteractionNotesModule,
     CallbackDetailsModule,
+    SaleDetailsModule,
     BrowserAnimationsModule
   ],
   providers: [],

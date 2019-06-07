@@ -1,3 +1,7 @@
+.grid2{
+    display: grid;
+    grid-template-columns: auto 48px;
+}
 .comments-box{
     white-space: pre-wrap; 
 }

@@ -22,6 +22,13 @@ export class NoteSummaryComponent implements OnInit {
     //console.log(this.note.date.toDateString());
     this.note = this.notesService.currentNote;
   }
-
-
+  copySummaryToClipboard(){
+    var r = document.createRange();
+    var summary = document.getElementById("summary-text");
+    r.selectNode(summary)
+    window.getSelection().removeAllRanges(); // clear current selection
+    window.getSelection().addRange(r); // to select text
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();// to deselect
+  }
 }
