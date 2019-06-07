@@ -21,6 +21,7 @@ export class NoteSummaryComponent implements OnInit {
   ngOnInit() {
     //console.log(this.note.date.toDateString());
     this.note = this.notesService.currentNote;
+    this.note = this.notesService.currentNote;
   }
   copySummaryToClipboard(){
     var r = document.createRange();

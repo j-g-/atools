@@ -15,7 +15,8 @@
         <br>
         <div *ngIf="note.requiresFollowUp">
         [CALLBACK INFO]:<br>
-        Agreed to follow up on {{note.callbackInfo.date}} between: no time specified. <br>
+        Agreed to follow up on {{note.callbackInfo.date}} 
+        between: {{note.callbackInfo.cbWindowStartTime}} and   {{note.callbackInfo.cbWindowEndTime}} . <br>
         </div>
         <b>[SALE INFO]</b>:<br>
         </div>
