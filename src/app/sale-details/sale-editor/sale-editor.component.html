@@ -29,10 +29,11 @@
   </div>
   <div>
     <h3>Sold</h3>
-    <mat-checkbox>HS</mat-checkbox>
-    <mat-checkbox>TV</mat-checkbox>
+    <mat-checkbox *ngFor="let p of productsCatalog.currentProducts | keyvalue">{{p.key}}</mat-checkbox>
+
+    <!-- <mat-checkbox>HS</mat-checkbox>
     <mat-checkbox>HP</mat-checkbox>
-    <mat-checkbox>Upsell</mat-checkbox>
+    <mat-checkbox>Upsell</mat-checkbox> -->
   </div>
   <div class="comments-container">
     <mat-form-field>

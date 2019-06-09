@@ -11,6 +11,8 @@ import { AngularMaterialImportsModule } from "./angular-material-imports/angular
 import { InteractionNotesModule } from "./interaction-notes/interaction-notes.module";
 import { CallbackDetailsModule } from './callback-details/callback-details.module';
 import { SaleDetailsModule } from './sale-details/sale-details.module';
+import { AgentInfoModule } from './agent-info/agent-info.module';
+import { TimeRangePickerModule } from './time-range-picker/time-range-picker.module';
 //import { MatIcon } from "@angular/material";
 
 @NgModule({
@@ -25,6 +27,8 @@ import { SaleDetailsModule } from './sale-details/sale-details.module';
     InteractionNotesModule,
     CallbackDetailsModule,
     SaleDetailsModule,
+    AgentInfoModule,
+    TimeRangePickerModule,
     BrowserAnimationsModule
   ],
   providers: [],

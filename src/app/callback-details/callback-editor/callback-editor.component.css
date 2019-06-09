@@ -12,13 +12,39 @@ textarea {
 button{
     justify-self: right;
 }
-#quick-date-options{
+#quick-date-options  {
     padding: 4px;
-    height: 3em;
+    text-align: center;
     grid-column-start: 1;
     grid-column-end: 5;
 
 }
+.time-picker-box{
+    padding: 4px;
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 5;
+
+
+}
+.mat-button-toggle-group{
+    background: lightblue;
+}
+.quick-date-box{
+    line-height:1em;
+}
+.day{
+    font-weight: bold;
+    line-height: 1em;
+    font-size: 2em;
+}
+.day-text{
+    line-height: 1em;
+    font-size: 1.2em;
+}
 .mat-button-toggle{
     font-size: 0.7em;
+}
+.mat-form-field{
+    min-width: 5em;
 }

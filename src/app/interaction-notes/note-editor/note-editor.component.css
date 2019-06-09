@@ -13,6 +13,9 @@ button{
 .mat-checkbox{
     align-self: center;
 }
+.mat-form-field{
+    min-width: 5em;
+}
 #auth-method-container{
     margin: 0;
     margin-left: auto;

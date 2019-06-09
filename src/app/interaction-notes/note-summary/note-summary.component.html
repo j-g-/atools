@@ -5,9 +5,10 @@
         Summary
       </mat-card-title>
       <mat-card-content>
-        <div id="summary-text">[DEPT: Agent]<br>
-        Caller: <b>{{note.caller}}</b> <br>
-        CBR: <b>{{note.callbackPhoneNumber}}</b><br>
+        <div id="summary-text"><b>{{ agent.signature.length > 0 ? 
+          agent.signature : 
+          "["+agent.dept+" : "+agent.name+"]"}}</b><br>
+        Caller: <b>{{note.caller}}</b> CBR: <b>{{note.callbackPhoneNumber}}</b><br>
         <b>{{note.auth? "Authenticated": "Not authenticated."}}</b>
         <span *ngIf="note.auth == true"> with <b>{{note.authInfo}}</b>.</span> <br>
         <b>[CALL DETAILS]</b>:<br>
@@ -15,7 +16,7 @@
         <br>
         <div *ngIf="note.requiresFollowUp">
         [CALLBACK INFO]:<br>
-        Agreed to follow up on {{note.callbackInfo.date}} 
+        Agreed to follow up on {{note.callbackInfo.date | date: 'MM/dd/yyyy'}} 
         between: {{note.callbackInfo.cbWindowStartTime}} and   {{note.callbackInfo.cbWindowEndTime}} . <br>
         </div>
         <b>[SALE INFO]</b>:<br>

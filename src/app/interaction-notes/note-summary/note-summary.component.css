@@ -5,7 +5,11 @@
 .comments-box{
     white-space: pre-wrap; 
 }
+.mat-card-title{
+    font-size: large;
+}
 .mat-card{
     font-size: large;
-    font-family: monospace;
+    /* font-family: monospace; */
+    margin: 1em;
 }

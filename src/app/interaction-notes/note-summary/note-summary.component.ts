@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { InteractionNote } from "../interaction-note";
 import { IneractionNotesService } from "../ineraction-notes.service";
+import { AgentInfoService } from 'src/app/agent-info/agent-info.service';
+import { AgentInfo } from 'src/app/agent-info/agent-info';
 
 @Component({
   selector: 'app-note-summary',
@@ -9,9 +11,10 @@ import { IneractionNotesService } from "../ineraction-notes.service";
 })
 export class NoteSummaryComponent implements OnInit {
   note: InteractionNote;
+  agent: AgentInfo;
   dateText: string;
 
-  constructor(private notesService: IneractionNotesService) { 
+  constructor(private notesService: IneractionNotesService, private agentInfoService:AgentInfoService) { 
     // this.note.accPhoneNumber = "0123456789"
     // this.note.callbackPhoneNumber = "0123456789"
     // this.note.accRef = "0123456789"
@@ -21,7 +24,7 @@ export class NoteSummaryComponent implements OnInit {
   ngOnInit() {
     //console.log(this.note.date.toDateString());
     this.note = this.notesService.currentNote;
-    this.note = this.notesService.currentNote;
+    this.agent = this.agentInfoService.currentAgentInfo;
   }
   copySummaryToClipboard(){
     var r = document.createRange();
