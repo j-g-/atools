@@ -8,9 +8,19 @@ export class AgentInfoService {
   currentAgentInfo: AgentInfo;
 
   constructor() {
-    this.currentAgentInfo = new AgentInfo();
+    this.getFromLocalStorage();
+  }
+  getFromLocalStorage(){
+    this.currentAgentInfo =  JSON.parse(localStorage.getItem("agentInfo"));
+    if (this.currentAgentInfo == null){
+      this.currentAgentInfo = new AgentInfo();
+    }
   }
   getCurrent(){
     return this.currentAgentInfo;
   }
+  saveToLocalStorage(){
+    localStorage.setItem("agentInfo", JSON.stringify(this.currentAgentInfo));
+    
+  }   
 }

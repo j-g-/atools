@@ -16,7 +16,7 @@ export class SaleEditorComponent implements OnInit {
   ngOnInit() {
     this.productsCatalog = this.productsCatalogServie.catalog;
     this.productNames = this.productsCatalog.getCurrentProducts().keys();
-    console.log(this.productNames.toString());
+      
   }
 
 }

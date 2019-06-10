@@ -15,5 +15,9 @@ export class AgentInfoEditorComponent implements OnInit {
     this.agentInfo = this.agentInfoService.getCurrent();
     console.log(this.agentInfo.name);
   }
+  save(){
+    this.agentInfoService.saveToLocalStorage();
+
+  }
 
 }

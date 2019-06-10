@@ -1,5 +1,10 @@
 <div id="agent-info-container">
-  <h2>Agent Information</h2>
+  <div class="title-bar">
+    <h2>Agent Information</h2>
+    <button mat-icon-button (click)="save()">
+      <mat-icon>save</mat-icon>
+    </button>
+  </div>
   <mat-form-field>
     <input type="text" matInput placeholder="Name" [(ngModel)]="agentInfo.name" />
   </mat-form-field>
@@ -12,4 +17,5 @@
   <mat-form-field>
     <input type="text" matInput placeholder="Custom signature" [(ngModel)]="agentInfo.signature" />
   </mat-form-field>
+
 </div>
