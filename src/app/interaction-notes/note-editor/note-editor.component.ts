@@ -9,10 +9,19 @@ import { InteractionNote } from "../interaction-note";
 })
 export class NoteEditorComponent implements OnInit {
   currentNote: InteractionNote;
+  _subscription: any;
 
   constructor(private notesService: IneractionNotesService) { 
+    this.currentNote = notesService.currentNote;
+    this._subscription = 
+      notesService.currentNoteChange.subscribe((value) =>{
+        this.currentNote = value;
+      });
   }
   ngOnInit() {
-    this.currentNote = this.notesService.currentNote;
+  }
+    ngOnDestroy() {
+   //prevent memory leak when component destroyed
+    this._subscription.unsubscribe();
   }
 }

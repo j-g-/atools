@@ -17,7 +17,6 @@ export class AgentInfoEditorComponent implements OnInit {
   }
   save(){
     this.agentInfoService.saveToLocalStorage();
-
   }
 
 }

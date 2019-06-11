@@ -3,10 +3,11 @@
   <mat-toolbar-row>
     <span>Agent Tools</span>
     <span class="h-fill"></span>
-    <mat-icon>navigate_before</mat-icon>
-    <mat-icon>navigate_next</mat-icon>
-    <mat-icon>save</mat-icon>
     <button  mat-icon-button (click)="settingsSidenav.toggle()"><mat-icon>settings</mat-icon></button>
+    <button  mat-icon-button (click)="previousNote()"><mat-icon>navigate_before</mat-icon></button>
+    <button  mat-icon-button (click)="nextNote()"><mat-icon>navigate_next</mat-icon></button>
+    <button  mat-icon-button (click)="saveNotes()"><mat-icon>save</mat-icon></button>
+    <button  mat-icon-button (click)="newNote()"><mat-icon>note_add</mat-icon></button>
   </mat-toolbar-row>
 </mat-toolbar>
 

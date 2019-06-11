@@ -13,11 +13,22 @@ export class CallbackEditorComponent implements OnInit {
   callbackInfo: CallbackInfo;
   currentNote: InteractionNote;
   quickDates: Date[];
-  constructor(private notesService:IneractionNotesService) { }
+  _subscription: any;
+  constructor(private notesService:IneractionNotesService) {
+    this.currentNote = this.notesService.getCurrentNote();
+    this.callbackInfo = this.currentNote.callbackInfo;
+    this._subscription = 
+      notesService.currentNoteChange.subscribe((value) =>{
+        this.currentNote = value;
+        this.callbackInfo = this.currentNote.callbackInfo;
+      });
+  }
+    ngOnDestroy() {
+   //prevent memory leak when component destroyed
+    this._subscription.unsubscribe();
+  }
 
   ngOnInit() {
-    this.callbackInfo = this.notesService.currentNote.callbackInfo;
-    this.currentNote = this.notesService.currentNote;
     this.quickDates = [new Date()]; 
     for (var i = 0; i<4 ; i++){
       var d = this.quickDates[i].getDate() + 1;

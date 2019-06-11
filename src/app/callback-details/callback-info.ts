@@ -3,7 +3,7 @@ import { Time } from '@angular/common';
 
 export class CallbackInfo {
     useSameInfo:boolean;
-    refNote:InteractionNote;
+    refNoteId:string;
     contact:String;
     accRef:String;
     comments:String;
@@ -13,21 +13,21 @@ export class CallbackInfo {
     cbWindowEndTime:Time;
     date:Date;
 
-    constructor(refNote:InteractionNote){
+    constructor(refNoteId:string){
         this.useSameInfo = true;
         this.cbWindowStartTime = {hours: 12,minutes: 0};
         this.cbWindowEndTime = {hours: 12,minutes: 0};
         this.date = new Date();
         this.completed = false;
-        this.refNote = refNote;
-        this.updateToSameInfo();
+        this.refNoteId = refNoteId;
+        //this.updateToSameInfo();
     }
 
-    updateToSameInfo(){
-        this.contact = this.refNote.caller;
-        this.accRef = this.refNote.accRef;
-        this.callbackPhoneNumber = this.refNote.callbackPhoneNumber;
-        this.comments = this.refNote.comments;
+    updateToSameInfo(refNote:InteractionNote){
+        this.contact = refNote.caller;
+        this.accRef = refNote.accRef;
+        this.callbackPhoneNumber = this.callbackPhoneNumber;
+        this.comments = this.comments;
     }
 
 }

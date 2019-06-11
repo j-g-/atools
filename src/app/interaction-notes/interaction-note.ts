@@ -1,6 +1,7 @@
 import { CallbackInfo } from '../callback-details/callback-info';
 
 export class InteractionNote {
+    id: string;
     caller: string;
     callbackPhoneNumber: string;
     auth: boolean;
@@ -13,6 +14,7 @@ export class InteractionNote {
     requiresFollowUp:boolean;
     callbackInfo: CallbackInfo;
     constructor (){
+        this.id = "";
         this.caller = "";
         this.callbackPhoneNumber = "";
         this.accPhoneNumber = "";
@@ -23,8 +25,8 @@ export class InteractionNote {
         this.comments = "";
         this.date = new Date();
         this.requiresFollowUp = false;
-        this.callbackInfo = new CallbackInfo(this);
-
+        this.callbackInfo = new CallbackInfo(this.id);
+        this.callbackInfo.updateToSameInfo(this);
     }
 
 }
