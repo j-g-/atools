@@ -5,9 +5,10 @@ import { AngularMaterialImportsModule } from '../angular-material-imports/angula
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TimeRangePickerModule } from '../time-range-picker/time-range-picker.module';
+import { CallbacksBoardComponent } from './callbacks-board/callbacks-board.component';
 
 @NgModule({
-  declarations: [CallbackEditorComponent],
+  declarations: [CallbackEditorComponent, CallbacksBoardComponent],
   imports: [
     CommonModule,
     AngularMaterialImportsModule,
@@ -17,7 +18,8 @@ import { TimeRangePickerModule } from '../time-range-picker/time-range-picker.mo
     ReactiveFormsModule
   ],
   exports: [
-    CallbackEditorComponent
+    CallbackEditorComponent,
+    CallbacksBoardComponent
   ]
 })
 export class CallbackDetailsModule { }

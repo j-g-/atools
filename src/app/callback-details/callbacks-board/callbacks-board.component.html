@@ -1,0 +1,7 @@
+<div class="callbacks-list">
+  <mat-card *ngFor="let note of filteredNotes">
+     Contact: {{note.caller}} CBR: {{note.cbr}} <br>
+     <b>{{note.date | date: "MMMM/dd/yyyy" }} </b>
+     {{note.callbackInfo.cbWindowStartTime}} - {{note.callbackInfo.cbWindowEndTime}}
+  </mat-card>
+</div>

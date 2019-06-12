@@ -20,7 +20,7 @@ export class NoteEditorComponent implements OnInit {
   }
   ngOnInit() {
   }
-    ngOnDestroy() {
+  ngOnDestroy() {
    //prevent memory leak when component destroyed
     this._subscription.unsubscribe();
   }

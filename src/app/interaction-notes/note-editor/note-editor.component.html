@@ -14,13 +14,13 @@
       <mat-icon>file_copy</mat-icon>
     </button>
     <mat-form-field>
-      <input type="text" matInput placeholder="Acc. Ref" />
+      <input type="text" matInput placeholder="Acc. Ref" [(ngModel)]="currentNote.accRef"/>
     </mat-form-field>
     <button tabindex="-1" mat-icon-button>
       <mat-icon>file_copy</mat-icon>
     </button>
     <mat-form-field>
-      <input type="tel" matInput placeholder="Tel #" />
+      <input type="tel" matInput placeholder="Tel #" [(ngModel)]="currentNote.accPhoneNumber"/>
     </mat-form-field>
     <button tabindex="-1" mat-icon-button>
       <mat-icon>file_copy</mat-icon>

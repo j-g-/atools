@@ -9,15 +9,20 @@ export class CallbackInfo {
     comments:String;
     callbackPhoneNumber:String;
     completed:boolean;
-    cbWindowStartTime:Time;
-    cbWindowEndTime:Time;
+    cbWindowStartTime:string;
+    cbWindowEndTime:string;
     date:Date;
 
     constructor(refNoteId:string){
         this.useSameInfo = true;
-        this.cbWindowStartTime = {hours: 12,minutes: 0};
-        this.cbWindowEndTime = {hours: 12,minutes: 0};
         this.date = new Date();
+        this.date.getHours
+        //let h = this.date.getHours();
+        //let m = this.date.getMinutes();
+        //this.cbWindowStartTime = `${h}:${m}`;
+        //this.cbWindowEndTime =  `${h}:${m}`;
+        this.cbWindowStartTime = "12:00";
+        this.cbWindowEndTime =  "12:00";
         this.completed = false;
         this.refNoteId = refNoteId;
         //this.updateToSameInfo();
