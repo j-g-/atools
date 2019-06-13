@@ -4,7 +4,7 @@ body {
 }
 .c2-grid{
     display: grid;
-    grid-template-columns: auto 150px;
+    grid-template-columns: auto 15em;
 }
 .right-side{
     background: lightskyblue;

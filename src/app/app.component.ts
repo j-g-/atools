@@ -9,10 +9,11 @@ import { IneractionNotesService } from './interaction-notes/ineraction-notes.ser
 export class AppComponent {
   title = 'Agent Tools';
   constructor(private interactionNotesService:IneractionNotesService){
-
+  }
+  deleteNotes(){
+    this.interactionNotesService.deleteAllNotes();
   }
   saveNotes(){
-    console.log("save front")
     this.interactionNotesService.saveToLocalStorage();
   }
   nextNote(){

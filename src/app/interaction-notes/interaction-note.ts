@@ -13,6 +13,7 @@ export class InteractionNote {
     date: Date;
     requiresFollowUp:boolean;
     callbackInfo: CallbackInfo;
+
     constructor (){
         this.id = "";
         this.caller = "";
@@ -27,6 +28,9 @@ export class InteractionNote {
         this.requiresFollowUp = false;
         this.callbackInfo = new CallbackInfo(this.id);
         this.callbackInfo.updateToSameInfo(this);
+    }
+    hasFollowUpForToday(){
+        return this.callbackInfo.isForToday();
     }
 
 }

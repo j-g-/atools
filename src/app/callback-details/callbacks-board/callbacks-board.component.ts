@@ -10,6 +10,7 @@ import { InteractionNote } from 'src/app/interaction-notes/interaction-note';
 export class CallbacksBoardComponent implements OnInit {
   notes:InteractionNote[];
   filteredNotes:InteractionNote[];
+  followUpCount:number = 0 ;
   _subscription: any;
 
 
@@ -28,9 +29,20 @@ export class CallbacksBoardComponent implements OnInit {
     this.filteredNotes = [];
     this.notes.forEach((note)=>{
       if(note.requiresFollowUp){
+        console.log(note.callbackInfo);
+        //let test:boolean = note.callbackInfo.isForToday();
         this.filteredNotes.push(note);
+        this.followUpCount = this.filteredNotes.length;
       }
     });
   }
-
+  hasTodayFollowUp(note:InteractionNote){
+    var d: Date = new Date();
+    var dd = new Date();
+    dd.setMilliseconds(Date.parse(note.callbackInfo.date as unknown as string));
+    return  (
+      d.getMilliseconds() <=
+      dd.getMilliseconds()
+    ) ? true : false;
+  }
 }

@@ -18,14 +18,26 @@ export class IneractionNotesService {
     //Add 'implements OnInit' to the class.
     
   }
+
+  public deleteAllNotes() {
+    this.deleteLocalStorage();
+    this.resetVariables();
+  }
+  resetVariables(){
+    this.currentNote = new InteractionNote();
+    this.notes = [];
+    this.notes.push(this.currentNote);
+    this.currentIndex = 0;
+    this.updateToCurrentIndex();
+  }
+    
   loadFromLocalStorage(){
-    this.notes =  JSON.parse(localStorage.getItem("notes"));
-    if (this.notes == null){
-      this.currentNote = new InteractionNote();
-      this.notes = [];
-      this.notes.push(this.currentNote);
-      this.currentIndex = 0;
+    let jsonData = localStorage.getItem("notes");
+    console.log(jsonData);
+    if (jsonData.length == 0){
+      this.resetVariables();
     } else {
+      this.notes = JSON.parse(jsonData);
       this.currentIndex = this.notes.length -1;
     }
     this.updateToCurrentIndex();
@@ -64,6 +76,10 @@ export class IneractionNotesService {
 
   saveToLocalStorage(){
     localStorage.setItem("notes", JSON.stringify(this.notes));
+  }   
+
+  deleteLocalStorage(){
+    localStorage.setItem("notes", "");
   }   
 
 }

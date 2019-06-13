@@ -1,7 +1,16 @@
 <div class="callbacks-list">
+  <h4>Callbacks: {{followUpCount}}</h4>
   <mat-card *ngFor="let note of filteredNotes">
-     Contact: {{note.caller}} CBR: {{note.cbr}} <br>
-     <b>{{note.date | date: "MMMM/dd/yyyy" }} </b>
-     {{note.callbackInfo.cbWindowStartTime}} - {{note.callbackInfo.cbWindowEndTime}}
+    <mat-card-title>
+      {{note.caller}}<br>To {{note.callbackPhoneNumber}}
+    </mat-card-title>
+    <mat-card-content>
+      {{(hasTodayFollowUp(note))? "Today" : note.callbackInfo.date | date: "MMMM/dd/yyyy" }}
+    
+      {{note.callbackInfo.cbWindowStartTime}} - {{note.callbackInfo.cbWindowEndTime}}
+    <mat-card-actions>
+      <mat-checkbox [(ngModel)]="note.callbackInfo.completed">Completed</mat-checkbox>
+    </mat-card-actions>
+    </mat-card-content>
   </mat-card>
 </div>

@@ -16,7 +16,7 @@ export class CallbackInfo {
     constructor(refNoteId:string){
         this.useSameInfo = true;
         this.date = new Date();
-        this.date.getHours
+        //this.date.getHours;
         //let h = this.date.getHours();
         //let m = this.date.getMinutes();
         //this.cbWindowStartTime = `${h}:${m}`;
@@ -26,6 +26,18 @@ export class CallbackInfo {
         this.completed = false;
         this.refNoteId = refNoteId;
         //this.updateToSameInfo();
+    }
+    
+    public isForToday():  boolean {
+        let d = new Date();
+        console.log(d.toDateString());
+        
+        return ( 
+            d.getFullYear() == this.date.getUTCFullYear() &&
+            d.getMonth() == this.date.getUTCMonth() &&
+            d.getDate() == this.date.getUTCMonth() 
+            ) ? true: false;
+
     }
 
     updateToSameInfo(refNote:InteractionNote){
