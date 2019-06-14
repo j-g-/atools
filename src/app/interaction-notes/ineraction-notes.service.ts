@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { InteractionNote } from "./interaction-note";
 import { Subject } from 'rxjs';
+import { CallbackInfo } from '../callback-details/callback-info';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,19 @@ export class IneractionNotesService {
     this.deleteLocalStorage();
     this.resetVariables();
   }
+  public deleteCurrentNote(){
+    if(this.currentIndex > -1){
+      this.notes.splice(this.currentIndex,1);
+    }
+    if (this.notes.length == 0){
+      this.resetVariables();
+    }
+    if(this.currentIndex > 0){
+      this.currentIndex--;
+    } 
+    this.saveToLocalStorage();
+    this.updateToCurrentIndex();
+  }
   resetVariables(){
     this.currentNote = new InteractionNote();
     this.notes = [];
@@ -37,13 +51,23 @@ export class IneractionNotesService {
     if (jsonData.length == 0){
       this.resetVariables();
     } else {
-      this.notes = JSON.parse(jsonData);
+      this.notes = [];
+      let rawNotes = JSON.parse(jsonData);
+      rawNotes.forEach((n: InteractionNote) => {
+        let ncont = new InteractionNote();
+        ncont.fromJSON(n);
+        ncont.callbackInfo = Object.assign(new CallbackInfo(ncont.id), ncont.callbackInfo);
+        this.notes.push(ncont);
+      });
       this.currentIndex = this.notes.length -1;
     }
     this.updateToCurrentIndex();
   }
   newNote(){
-    this.notes.push(new InteractionNote());
+    let n = new InteractionNote();
+    console.log("Test new");
+    console.log(n.getFollowUpInfo().isToday());
+    this.notes.push(n);
     this.currentIndex = this.notes.length -1;
     this.saveToLocalStorage();
     this.updateToCurrentIndex();

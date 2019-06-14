@@ -11,11 +11,12 @@ export class CallbackInfo {
     completed:boolean;
     cbWindowStartTime:string;
     cbWindowEndTime:string;
-    date:Date;
+    date:string;
 
     constructor(refNoteId:string){
         this.useSameInfo = true;
-        this.date = new Date();
+        let d = new Date();
+        this.date = d.toISOString();
         //this.date.getHours;
         //let h = this.date.getHours();
         //let m = this.date.getMinutes();
@@ -27,17 +28,12 @@ export class CallbackInfo {
         this.refNoteId = refNoteId;
         //this.updateToSameInfo();
     }
-    
-    public isForToday():  boolean {
-        let d = new Date();
-        console.log(d.toDateString());
-        
-        return ( 
-            d.getFullYear() == this.date.getUTCFullYear() &&
-            d.getMonth() == this.date.getUTCMonth() &&
-            d.getDate() == this.date.getUTCMonth() 
-            ) ? true: false;
-
+    isToday(){
+        let today = new Date();
+        today.setHours(0,0,0,0);
+        let d = new Date(this.date);
+        d.setHours(0,0,0,0);
+        return d.getTime() == today.getTime();
     }
 
     updateToSameInfo(refNote:InteractionNote){
@@ -46,5 +42,4 @@ export class CallbackInfo {
         this.callbackPhoneNumber = this.callbackPhoneNumber;
         this.comments = this.comments;
     }
-
 }

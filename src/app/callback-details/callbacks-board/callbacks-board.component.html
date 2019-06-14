@@ -1,16 +1,28 @@
 <div class="callbacks-list">
-  <h4>Callbacks: {{followUpCount}}</h4>
-  <mat-card *ngFor="let note of filteredNotes">
-    <mat-card-title>
-      {{note.caller}}<br>To {{note.callbackPhoneNumber}}
-    </mat-card-title>
-    <mat-card-content>
-      {{(hasTodayFollowUp(note))? "Today" : note.callbackInfo.date | date: "MMMM/dd/yyyy" }}
-    
-      {{note.callbackInfo.cbWindowStartTime}} - {{note.callbackInfo.cbWindowEndTime}}
-    <mat-card-actions>
-      <mat-checkbox [(ngModel)]="note.callbackInfo.completed">Completed</mat-checkbox>
-    </mat-card-actions>
-    </mat-card-content>
-  </mat-card>
+  <h4>Callbacks: {{filteredNotes.length}}</h4>
+  <div *ngIf="filteredNotes.length > 0" class="cards">
+    {{filter()}}
+    <mat-card *ngFor="let note of filteredNotes">
+      <mat-card-title>
+        <div class="c2-grid">
+          <div class="left">
+            {{note.caller}}<br>
+            {{note.callbackPhoneNumber}}
+          </div>
+          <div class="right">
+            {{(note.callbackInfo.isToday())? "Today" : note.callbackInfo.date | date: "EEEE, MMMM dd" }} <br>
+            {{note.callbackInfo.cbWindowStartTime}} - {{note.callbackInfo.cbWindowEndTime}}
+          </div>
+        </div>
+      </mat-card-title>
+      <mat-card-content>
+        <div class="comments">
+          {{note.comments}}
+        </div>
+        <mat-card-actions>
+          <mat-checkbox [(ngModel)]="note.callbackInfo.completed">Completed</mat-checkbox>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>

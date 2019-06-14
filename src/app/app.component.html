@@ -3,7 +3,8 @@
   <mat-toolbar-row>
     <span>Agent Tools</span>
     <span class="h-fill"></span>
-    <button  mat-icon-button (click)="deleteNotes()"><mat-icon>delete</mat-icon></button>
+    <span>{{(getNoteIndex()+1) +"/"+getNotesCount()}}</span>
+    <button  mat-icon-button (click)="deleteCurrentNote()"><mat-icon>delete</mat-icon></button>
     <button  mat-icon-button (click)="settingsSidenav.toggle()"><mat-icon>settings</mat-icon></button>
     <button  mat-icon-button (click)="previousNote()"><mat-icon>navigate_before</mat-icon></button>
     <button  mat-icon-button (click)="nextNote()"><mat-icon>navigate_next</mat-icon></button>

@@ -20,3 +20,15 @@ mat-card-actions{
     font-size:1em;
     text-align: right;
 }
+.c2-grid{
+    display: grid;
+    grid-template-columns: auto 8em;
+}
+.right{
+    font-size: 0.9em;
+    text-align: right;
+}
+.comments{
+    white-space: pre-wrap;
+
+}

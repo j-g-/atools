@@ -1,6 +1,7 @@
 import { CallbackInfo } from '../callback-details/callback-info';
+import { Note } from './note';
 
-export class InteractionNote {
+export class InteractionNote implements Note{
     id: string;
     caller: string;
     callbackPhoneNumber: string;
@@ -29,8 +30,11 @@ export class InteractionNote {
         this.callbackInfo = new CallbackInfo(this.id);
         this.callbackInfo.updateToSameInfo(this);
     }
-    hasFollowUpForToday(){
-        return this.callbackInfo.isForToday();
+    fromJSON(data: any){
+        return Object.assign(this, data);
+    }
+    public getFollowUpInfo(){
+        return this.callbackInfo as CallbackInfo;
     }
 
 }
