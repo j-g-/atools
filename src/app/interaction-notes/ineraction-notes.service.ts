@@ -48,7 +48,7 @@ export class IneractionNotesService {
   loadFromLocalStorage(){
     let jsonData = localStorage.getItem("notes");
     console.log(jsonData);
-    if (jsonData.length){
+    if (jsonData){
       this.resetVariables();
     } else {
       this.notes = [];
