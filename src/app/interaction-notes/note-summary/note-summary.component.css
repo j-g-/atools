@@ -1,12 +1,13 @@
 .grid2{
     display: grid;
     grid-template-columns: auto 48px;
+    max-height: 20em;
 }
 .comments-box{
     white-space: pre-wrap; 
 }
 .mat-card-title{
-    font-size: large;
+    font-size: medium;
 }
 .mat-card{
     font-size: large;

@@ -2,7 +2,8 @@
   <div class="element">
     <mat-card>
       <mat-card-title>
-        Summary
+        Date: {{note.date | date: "MMMM dd yyyy - hh:mm" }} <br>
+        Ref: {{note.accRef}}
       </mat-card-title>
       <mat-card-content>
         <div id="summary-text"><b>{{ agent.signature.length > 0 ? 
@@ -17,7 +18,7 @@
         <div *ngIf="note.requiresFollowUp">
         [CALLBACK INFO]:<br>
         Agreed to follow up on {{note.callbackInfo.date | date: 'MM/dd/yyyy'}} 
-        between: {{note.callbackInfo.cbWindowStartTime}} and   {{note.callbackInfo.cbWindowEndTime}} . <br>
+        between: {{note.callbackInfo.cbWindowStartTime}} and {{note.callbackInfo.cbWindowEndTime}} . <br>
         </div>
         <b>[SALE INFO]</b>:<br>
         </div>

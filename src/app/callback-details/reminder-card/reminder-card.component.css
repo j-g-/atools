@@ -1,0 +1,48 @@
+mat-card{
+    padding:0.0em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0px;
+    margin-bottom: 8px;
+}
+mat-card-title{
+    padding: 0.3em 0.9em 0.3em 0.9em;
+    font-size:0.9em;
+    margin: 0px;
+}
+mat-card-content{
+    padding:0.3em 0.7em 0.3em 0.7em;
+    font-size:0.7em;
+}
+mat-card-actions{
+    padding:1em 1em 0em 1em; 
+    font-size:1em;
+    text-align: right;
+}
+.c2-grid{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.left{
+    width: 7em;
+    word-wrap: break-word;
+}
+.right{
+    font-size: 0.9em;
+    width: 8em;
+    text-align: right;
+}
+.comments{
+    white-space: pre-wrap;
+}
+.severity-1{
+    background:coral;
+    color: white;
+}
+.severity-2{
+    background:goldenrod;
+}
+.severity-3{
+    background:mediumblue;
+    color: white;
+}

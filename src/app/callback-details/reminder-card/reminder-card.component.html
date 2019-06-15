@@ -1,0 +1,22 @@
+ <mat-card >
+   <mat-card-title class={{getSeverity()}}>
+     <div class="c2-grid">
+       <div class="left">
+         {{note.caller}}<br>
+         {{note.callbackPhoneNumber}}
+       </div>
+       <div class="right">
+         {{(note.callbackInfo.isToday())? "Today" : note.callbackInfo.date | date: "EEEE, MMMM dd" }} <br>
+         {{note.callbackInfo.cbWindowStartTime}} - {{note.callbackInfo.cbWindowEndTime}}
+       </div>
+     </div>
+   </mat-card-title>
+   <mat-card-content>
+     <div class="comments">
+       {{note.comments}}
+     </div>
+     <mat-card-actions>
+       <mat-checkbox [(ngModel)]="note.callbackInfo.completed">Completed</mat-checkbox>
+     </mat-card-actions>
+   </mat-card-content>
+ </mat-card>

@@ -1,11 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<mat-toolbar color="primary">
+<mat-toolbar color="warn">
   <mat-toolbar-row>
+    <button  mat-icon-button (click)="settingsSidenav.toggle()"><mat-icon>menu</mat-icon></button>
     <span>Agent Tools</span>
     <span class="h-fill"></span>
     <span>{{(getNoteIndex()+1) +"/"+getNotesCount()}}</span>
     <button  mat-icon-button (click)="deleteCurrentNote()"><mat-icon>delete</mat-icon></button>
-    <button  mat-icon-button (click)="settingsSidenav.toggle()"><mat-icon>settings</mat-icon></button>
     <button  mat-icon-button (click)="previousNote()"><mat-icon>navigate_before</mat-icon></button>
     <button  mat-icon-button (click)="nextNote()"><mat-icon>navigate_next</mat-icon></button>
     <button  mat-icon-button (click)="saveNotes()"><mat-icon>save</mat-icon></button>
@@ -13,7 +13,7 @@
   </mat-toolbar-row>
 </mat-toolbar>
 
-<mat-sidenav-container class="side-container" >
+<mat-sidenav-container >
   <mat-sidenav #settingsSidenav mode="side" class="settings-sidenav">
     <app-agent-info-editor></app-agent-info-editor>
   </mat-sidenav>

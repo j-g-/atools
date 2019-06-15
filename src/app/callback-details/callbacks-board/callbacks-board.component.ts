@@ -9,13 +9,12 @@ import { CallbackInfo } from '../callback-info';
   styleUrls: ['./callbacks-board.component.css']
 })
 export class CallbacksBoardComponent implements OnInit {
-  notes:InteractionNote[];
   filteredNotes:InteractionNote[];
   _subscription: any;
 
 
   constructor(private notesService:IneractionNotesService) {
-    this.notes = notesService.notes;
+    this.filter();
     this._subscription = 
       notesService.currentNoteChange.subscribe((value) =>{
         this.filter();
@@ -26,11 +25,13 @@ export class CallbacksBoardComponent implements OnInit {
     this.filter();
   }
   filter(){
+    let notes = this.notesService.notes;
     this.filteredNotes = [];
-    this.notes.forEach((note)=>{
+    notes.forEach((note)=>{
       if(note.requiresFollowUp){
         console.log("Filtered");
         console.log(note.callbackInfo.date);
+        note.callbackInfo.updateSeverity();
         this.filteredNotes.push(note);
       }
     });

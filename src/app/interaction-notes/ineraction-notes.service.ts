@@ -25,15 +25,12 @@ export class IneractionNotesService {
     this.resetVariables();
   }
   public deleteCurrentNote(){
-    if(this.currentIndex > -1){
+    if(this.currentIndex > 0){
       this.notes.splice(this.currentIndex,1);
-    }
-    if (this.notes.length == 0){
+      this.currentIndex--;
+    } else {
       this.resetVariables();
     }
-    if(this.currentIndex > 0){
-      this.currentIndex--;
-    } 
     this.saveToLocalStorage();
     this.updateToCurrentIndex();
   }

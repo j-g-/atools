@@ -1,34 +1,3 @@
 .callbacks-list{
     padding: 8px;
 }
-mat-card{
-    padding:0.0em;
-    margin-bottom: 8px;
-}
-mat-card-title{
-    padding: 0.3em 0.9em 0.3em 0.9em;
-    font-size:0.9em;
-    background: lightcyan;
-    margin-bottom: 0em;
-}
-mat-card-content{
-    padding:0.3em 0.7em 0.3em 0.7em;
-    font-size:0.7em;
-}
-mat-card-actions{
-    padding:1em 1em 0em 1em; 
-    font-size:1em;
-    text-align: right;
-}
-.c2-grid{
-    display: grid;
-    grid-template-columns: auto 8em;
-}
-.right{
-    font-size: 0.9em;
-    text-align: right;
-}
-.comments{
-    white-space: pre-wrap;
-
-}

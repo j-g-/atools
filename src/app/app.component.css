@@ -5,8 +5,12 @@ body {
 .c2-grid{
     display: grid;
     grid-template-columns: auto 15em;
+    height: 94vh;
 }
 .right-side{
     background: lightskyblue;
 
+}
+.side-nav-container{
+    height: 100%;
 }

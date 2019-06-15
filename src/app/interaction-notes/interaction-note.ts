@@ -11,7 +11,7 @@ export class InteractionNote implements Note{
     accPhoneNumber: string;
     accRef: string;
     comments: string;
-    date: Date;
+    date: string;
     requiresFollowUp:boolean;
     callbackInfo: CallbackInfo;
 
@@ -25,7 +25,8 @@ export class InteractionNote implements Note{
         this.authMethod = 0;
         this.authInfo = "";
         this.comments = "";
-        this.date = new Date();
+        let d  = new Date();
+        this.date = d.toISOString();
         this.requiresFollowUp = false;
         this.callbackInfo = new CallbackInfo(this.id);
         this.callbackInfo.updateToSameInfo(this);
@@ -35,6 +36,10 @@ export class InteractionNote implements Note{
     }
     public getFollowUpInfo(){
         return this.callbackInfo as CallbackInfo;
+    }
+    public getDate(){
+        let m = Date.parse(this.date);
+        return new Date(m);
     }
 
 }

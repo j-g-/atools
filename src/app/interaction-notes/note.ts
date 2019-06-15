@@ -10,7 +10,7 @@ export interface Note {
     accPhoneNumber: string;
     accRef: string;
     comments: string;
-    date: Date;
+    date: string;
     requiresFollowUp:boolean;
     callbackInfo: CallbackInfo;
 }
