@@ -36,11 +36,11 @@ mat-card-actions{
     white-space: pre-wrap;
 }
 .severity-1{
-    background:coral;
+    background:#FF5252;
     color: white;
 }
 .severity-2{
-    background:goldenrod;
+    background:#fbc02d;
 }
 .severity-3{
     background:mediumblue;
