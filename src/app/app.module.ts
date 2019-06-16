@@ -13,11 +13,15 @@ import { CallbackDetailsModule } from './callback-details/callback-details.modul
 import { SaleDetailsModule } from './sale-details/sale-details.module';
 import { AgentInfoModule } from './agent-info/agent-info.module';
 import { TimeRangePickerModule } from './time-range-picker/time-range-picker.module';
+import { ControlsToolbarComponent } from './controls-toolbar/controls-toolbar.component';
+import { TrackerTabsComponent } from './tracker-tabs/tracker-tabs.component';
 //import { MatIcon } from "@angular/material";
 
 @NgModule({
   declarations: [
     AppComponent,
+    ControlsToolbarComponent,
+    TrackerTabsComponent,
   ],
   imports: [
     BrowserModule,

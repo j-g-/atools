@@ -1,16 +1,30 @@
 .grid2{
     display: grid;
     grid-template-columns: auto 48px;
-    max-height: 20em;
+    max-height: 24em;
 }
 .comments-box{
     white-space: pre-wrap; 
 }
 .mat-card-title{
     font-size: medium;
+    
 }
 .mat-card{
     font-size: large;
     /* font-family: monospace; */
-    margin: 1em;
+    margin: 4px;
+    padding: 0px;
+}
+.left{
+    padding: 1em;
+}
+#summary-text{
+    max-height: 20em;
+    overflow: auto;
+    
+}
+mat-toolbar{
+    font-size: medium;
+    line-height: 1em;
 }

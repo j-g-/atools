@@ -12,11 +12,12 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatDatepickerModule} from '@angular/material/datepicker'; 
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatSidenavModule} from '@angular/material/sidenav';
-
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [],
   imports: [
+    MatTooltipModule,
     MatNativeDateModule,
     MatSidenavModule,
     MatButtonToggleModule,
@@ -32,6 +33,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     CommonModule
   ],
   exports: [
+    MatTooltipModule,
     MatButtonToggleModule,
     MatSidenavModule,
     MatSelectModule,

@@ -1,26 +1,21 @@
-#note-editor{
-    display: flex;
-    flex-direction: column;
-    padding: 8px;
-}
 button{
     justify-self: right;
 }
-.auth-details{
-    display: flex;
-    flex-direction: row;
-}
-.mat-checkbox{
-    align-self: center;
-}
 .mat-form-field{
-    min-width: 5em;
+    min-width: 3em;
 }
-#auth-method-container{
-    margin: 0;
-    margin-left: auto;
-    width: 50%;
-    display: grid;
-    grid-template-columns: auto;
-
+input{
+    min-width: 3em;
+}
+.mat-icon{
+    font-size: 1em;
+}
+.auth-checkbox{
+    grid-column: span 2;
+}
+.comments-box{
+    grid-column: span 3;
+}
+.grid4{
+    margin: 4px;
 }

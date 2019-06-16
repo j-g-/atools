@@ -9,7 +9,8 @@ import { CallbackInfo } from '../callback-info';
   styleUrls: ['./callbacks-board.component.css']
 })
 export class CallbacksBoardComponent implements OnInit {
-  filteredNotes:InteractionNote[];
+  filteredNotes:InteractionNote[][];
+  count:number;
   _subscription: any;
 
 
@@ -27,12 +28,17 @@ export class CallbacksBoardComponent implements OnInit {
   filter(){
     let notes = this.notesService.notes;
     this.filteredNotes = [];
+    this.count =0;
+    for (let index = 0; index < 3; index++) {
+      this.filteredNotes.push([]);
+    }
     notes.forEach((note)=>{
       if(note.requiresFollowUp){
+        this.count++;
         console.log("Filtered");
         console.log(note.callbackInfo.date);
         note.callbackInfo.updateSeverity();
-        this.filteredNotes.push(note);
+        this.filteredNotes[note.callbackInfo.severity -1].push(note);
       }
     });
   }

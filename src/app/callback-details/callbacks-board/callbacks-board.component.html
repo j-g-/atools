@@ -1,7 +1,20 @@
 <div class="callbacks-list">
-  <h4>Callbacks: {{filteredNotes.length}}</h4>
-  <div *ngIf="filteredNotes.length > 0" class="cards">
-    <app-reminder-card *ngFor="let note of filteredNotes" [note]="note" >
+  <div class="header">
+    Callbacks: {{count}}
+  </div>
+  <div *ngIf="filteredNotes[0].length > 0" class="cards ">
+    <div class="title ">Past due:</div>
+    <app-reminder-card *ngFor="let note of filteredNotes[0] " [note]="note" >
+    </app-reminder-card>
+  </div>
+  <div *ngIf="filteredNotes[1].length > 0" class="cards ">
+    <div class="title">Urgent:</div>
+    <app-reminder-card *ngFor="let note of filteredNotes[1]" [note]="note" >
+    </app-reminder-card>
+  </div>
+  <div *ngIf="filteredNotes[2].length > 0" class="cards ">
+    <div class="title">Future:</div>
+    <app-reminder-card *ngFor="let note of filteredNotes[2]" [note]="note" >
     </app-reminder-card>
   </div>
 </div>

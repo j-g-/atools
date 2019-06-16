@@ -4,17 +4,20 @@
 body { 
   font-family: Roboto, Arial, sans-serif;
   margin: 0;
-  display: flex;
-  flex-direction: column;
+  display: block;
   height: 100vh;
+  flex-direction: column;
   align-content: stretch;
   align-items: stretch;
 }
+
 app-root{
-    order: 0;
-  flex: 1 1 auto;
+  order: 0;
   align-self: auto;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  height: inherit;
   background: lightcoral;
 }
 
@@ -28,7 +31,8 @@ app-root{
 }
 .grid4{
     display: grid;
-    grid-template-columns: auto 32px auto 32px;
+    grid-template-columns: 1fr 32px 1fr 32px;
+    grid-gap: 4px;
 }
 .comments-container{
     margin-top: 8px;
@@ -59,3 +63,8 @@ app-root{
 .mat-form-field-label{
     font-size: 12px !important;
 } */
+
+.info{
+    font-size: large;
+    background: red;
+}

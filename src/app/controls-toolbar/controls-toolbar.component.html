@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button  mat-icon-button (click)="settingsSidenav.toggle()"><mat-icon>menu</mat-icon></button>
+    <ng-container *ngIf="agent.name; else elseTemplate">
+      <b>{{ agent.signature.length > 0 ? agent.signature : "["+agent.dept+" : "+agent.name+"]"}}</b>
+    </ng-container>
+    <ng-template #elseTemplate>
+    <span>Agent Tools</span>
+      
+    </ng-template>
+    
+    <span class="h-fill"></span>
+    <span>{{(getNoteIndex()+1) +"/"+getNotesCount()}}</span>
+    <button  mat-icon-button (click)="deleteCurrentNote()"><mat-icon>delete</mat-icon></button>
+    <button  mat-icon-button (click)="previousNote()"><mat-icon>navigate_before</mat-icon></button>
+    <button  mat-icon-button (click)="nextNote()"><mat-icon>navigate_next</mat-icon></button>
+    <button  mat-icon-button (click)="saveNotes()"><mat-icon matTooltip="Save"  matTooltipClass="info" >save</mat-icon></button>
+    <button  mat-icon-button (click)="newNote()"><mat-icon>note_add</mat-icon></button>
+  </mat-toolbar-row>
+</mat-toolbar>

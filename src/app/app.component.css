@@ -2,15 +2,29 @@ body {
     margin: 0%;
     padding: 0%;
 }
-.c2-grid{
+.trackers-grid{
     display: grid;
-    grid-template-columns: auto 15em;
-    height: 94vh;
-}
-.right-side{
-    background: lightskyblue;
+    height: inherit;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, auto);
+    grid-auto-flow: column;
+    grid-gap: 0.5em;
 
 }
-.side-nav-container{
-    height: 100%;
+mat-sidenav-container{
+    flex-grow: 1;
+    margin: 0;
+    display: block;
+}
+app-tracker-tabs {
+    grid-column: span 8;
+    grid-row: span 3;
+}
+app-note-summary {
+    grid-column: span 8;
+    grid-row: span 3;
+}
+app-callbacks-board {
+    grid-row: span 6;
+    grid-column: span 4;
 }
