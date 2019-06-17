@@ -19,3 +19,6 @@ input{
 .grid4{
     margin: 4px;
 }
+label{
+    font-size: small;
+}

@@ -1,33 +1,21 @@
 <mat-card>
-  <mat-card-title>
-    <mat-toolbar color="primary">
-      Date: {{note.date | date: "MMMM dd yyyy - hh:mm" }} <br>
-      Ref: {{note.accRef}}
-    </mat-toolbar>
-  </mat-card-title>
-  <mat-card-content>
-    <div class="grid2">
-      <div class="element left">
-        <div id="summary-text"><b>{{ agent.signature.length > 0 ? 
+  <mat-toolbar color="primary">
+    Date: {{note.date | date: "MMMM dd yyyy - hh:mm" }} <br>
+    Ref: {{note.accRef}}
+  </mat-toolbar>
+  <div id="summary-text"><b>{{ agent.signature.length > 0 ? 
                             agent.signature : 
                             "["+agent.dept+" : "+agent.name+"]"}}</b><br>
-          Caller: <b>{{note.caller}}</b> CBR: <b>{{note.callbackPhoneNumber}}</b><br>
-          <b>{{note.auth? "Authenticated": "Not authenticated."}}</b>
-          <span *ngIf="note.auth == true"> with <b>{{note.authInfo}}</b>.</span> <br>
-          <b>[CALL DETAILS]</b>:<br>
-          <div class="comments-box">{{note.comments}}</div>
-          <br>
-          <div *ngIf="note.requiresFollowUp"> [CALLBACK INFO]:<br>
-            Agreed to follow up on {{note.callbackInfo.date | date: 'MM/dd/yyyy'}}
-            between: {{note.callbackInfo.cbWindowStartTime}} and {{note.callbackInfo.cbWindowEndTime}} . <br>
-          </div>
-        </div>
-      </div>
-      <div class="element">
-        <button tabindex="-1" mat-icon-button (click)="copySummaryToClipboard()">
-          <mat-icon>file_copy</mat-icon>
-        </button>
-      </div>
+    Spoke to: <b>{{note.caller}}</b> Contact: <b>{{note.callbackPhoneNumber}}</b><br>
+    <b>{{note.auth? "Authenticated": "Not authenticated."}}</b>
+    <span *ngIf="note.auth == true"> with <b>{{note.authInfo}}</b>.</span> <br>
+    <b>Info</b>:<span class="comments-box">{{note.comments}}</span>
+    <br>
+    <div *ngIf="note.requiresFollowUp">  <b>Follow up:</b> on {{note.callbackInfo.date | date: 'MM/dd/yyyy'}}
+      between: {{note.callbackInfo.cbWindowStartTime}} and {{note.callbackInfo.cbWindowEndTime}} . <br>
     </div>
-  </mat-card-content>
+  </div>
+  <button tabindex="-1" mat-icon-button (click)="copySummaryToClipboard()">
+    <mat-icon>file_copy</mat-icon>
+  </button>
 </mat-card>

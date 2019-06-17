@@ -1,0 +1,7 @@
+mat-tab-label .mat-tab-label-content{
+    padding: none;
+    margin: none;
+    width: 5em;
+    color:blue;
+    background: red !important;
+} 

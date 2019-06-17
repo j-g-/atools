@@ -1,30 +1,24 @@
-.grid2{
-    display: grid;
-    grid-template-columns: auto 48px;
-    max-height: 24em;
-}
 .comments-box{
     white-space: pre-wrap; 
 }
-.mat-card-title{
-    font-size: medium;
-    
-}
-.mat-card{
-    font-size: large;
+mat-card{
+    display:grid;
+    grid-template-columns: auto 2.5em;
+    grid-gap: 4px;
     /* font-family: monospace; */
-    margin: 4px;
     padding: 0px;
-}
-.left{
-    padding: 1em;
+    border-radius: 0px;
+    background: wheat;
+    flex:1;
 }
 #summary-text{
-    max-height: 20em;
     overflow: auto;
-    
+    max-height: 11em;
+    min-height: 11em;
+    margin: 8px;
 }
 mat-toolbar{
     font-size: medium;
     line-height: 1em;
+    grid-column: span 2;
 }
