@@ -2,6 +2,16 @@ mat-tab-label .mat-tab-label-content{
     padding: none;
     margin: none;
     width: 5em;
+    max-width: 7em;
     color:blue;
     background: red !important;
 } 
+mat-tab-group{
+    flex: 1;
+    display: block;
+}
+div.tab-cont{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}

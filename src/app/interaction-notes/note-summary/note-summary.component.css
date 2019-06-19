@@ -13,8 +13,10 @@ mat-card{
 }
 #summary-text{
     overflow: auto;
+    font-family: monospace;
     max-height: 11em;
     min-height: 11em;
+    font-size: small;
     margin: 8px;
 }
 mat-toolbar{

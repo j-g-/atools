@@ -69,3 +69,21 @@ app-root{
     font-size: large;
     background: red;
 }
+
+app-note-editor{
+    display: block;
+    display: flex;
+    flex:1;
+}
+
+div.mat-tab-body-wrapper{
+    height: calc(100% - 3em);
+    flex:1;
+}
+.mat-tab-label{
+    max-width: 6em !important;
+    min-width: 6em !important;
+    padding: 0em;
+    height: 3em !important ;
+    font-size: 0.8em;
+}

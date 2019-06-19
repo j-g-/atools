@@ -1,48 +1,51 @@
-<div class="grid4">
-  <mat-form-field>
-    <input type="text" matInput placeholder="Caller" [(ngModel)]="currentNote.caller" />
-  </mat-form-field>
-  <button tabindex="-1" mat-icon-button>
-    <mat-icon>file_copy</mat-icon>
-  </button>
-  <mat-form-field>
-    <input type="tel" matInput placeholder="Callback #" [(ngModel)]="currentNote.callbackPhoneNumber" />
-  </mat-form-field>
-  <!-- <label  class="info-label">
-    Callback Number
-    <input type="tel" placeholder="Follow up Info" [(ngModel)]="currentNote.callbackPhoneNumber" />
-  </label> -->
-  <button tabindex="-1" mat-icon-button>
-    <mat-icon>file_copy</mat-icon>
-  </button>
-  <mat-form-field>
-    <input type="text" matInput placeholder="Acc. Ref" [(ngModel)]="currentNote.accRef" />
-  </mat-form-field>
-  <button tabindex="-1" mat-icon-button>
-    <mat-icon>file_copy</mat-icon>
-  </button>
-  <mat-form-field>
-    <input type="tel" matInput placeholder="Tel #" [(ngModel)]="currentNote.accPhoneNumber" />
-  </mat-form-field>
-  <button tabindex="-1" mat-icon-button>
-    <mat-icon>file_copy</mat-icon>
-  </button>
+<div class="container">
+  <div class="left-side">
+  <div class="info-entry">
+    <label for="currentNote-caller" class="info-label"> Spoke to: </label>
+    <input type="text" placeholder="Name" [(ngModel)]="currentNote.caller" />
+    <button tabindex="-1" mat-icon-button>
+      <mat-icon>file_copy</mat-icon>
+    </button>
+  </div>
+  <div class="info-entry">
+    <label class="info-label" for="callbackPhoneNumber"> Contact </label>
+    <input type="tel" placeholder="Follow up Info" [(ngModel)]="currentNote.callbackPhoneNumber" #callbackPhoneNumber />
+    <button tabindex="-1" mat-icon-button>
+      <mat-icon>file_copy</mat-icon>
+    </button>
+  </div>
+  <div class="info-entry">
+    <label class="info-label" for="accRef"> Acc. ref. </label>
+    <input type="text" placeholder="Acc. Ref" [(ngModel)]="currentNote.accRef" #accRef />
+    <button tabindex="-1" mat-icon-button>
+      <mat-icon>file_copy</mat-icon>
+    </button>
+  </div>
+  <div class="info-entry">
+    <label class="info-label" for="accPhoneNumber"> Tel. # </label>
+    <input type="text" placeholder="Tel #" [(ngModel)]="currentNote.accPhoneNumber" #accPhoneNumber/>
+    <button tabindex="-1" mat-icon-button>
+      <mat-icon>file_copy</mat-icon>
+    </button>
+  </div>
   <mat-checkbox class="auth-checkbox" [(ngModel)]="currentNote.auth"> Authenticated </mat-checkbox>
-  <mat-form-field id="auth-method-container">
-    <mat-label>Authentication method: </mat-label>
-    <mat-select [(ngModel)]="currentNote.authInfo">
-      <mat-option value="PIN">PIN</mat-option>
-      <mat-option value="IVR">IVR</mat-option>
-      <mat-option value="personal info">personal info</mat-option>
-      <mat-option value="last agent">last agent</mat-option>
-      <mat-option value="Exception Procedure">Exception Procedure</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <div></div>
-  <mat-form-field class="comments-box">
-    <textarea matInput placeholder="Comments" rows="10" [(ngModel)]="currentNote.comments"></textarea>
-  </mat-form-field>
-  <button tabindex="-1" mat-icon-button>
-    <mat-icon>file_copy</mat-icon>
-  </button>
+  <div class="info-entry" *ngIf="currentNote.auth">
+    <label class="info-label">Auth. method: </label>
+    <select [(ngModel)]="currentNote.authInfo" #authInfo>
+      <option value="PIN">PIN</option>
+      <option value="IVR">IVR</option>
+      <option value="personal info">personal info</option>
+      <option value="last agent">last agent</option>
+      <option value="Exception Procedure">Exception Procedure</option>
+    </select>
+  </div>
+  </div>
+  <div class="right-side">
+  <div class="comments-box">
+  <label class="comments-label">Comments </label>
+  <button tabindex="-1" mat-icon-button> <mat-icon>file_copy</mat-icon> </button>
+  <textarea placeholder="Comments" rows="10" [(ngModel)]="currentNote.comments"></textarea>
+  </div>
+  </div>
+   
 </div>

@@ -1,9 +1,8 @@
 .callbacks-list{
     padding: 8px;
-    background: wheat;
 }
 .title{
-    font-size: 1.5em;
+    font-size: 1em;
     border-bottom: 0.2em solid black;
     color:black;
     margin-bottom: 8px;

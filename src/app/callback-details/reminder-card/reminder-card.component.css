@@ -6,7 +6,8 @@ mat-card{
     margin-bottom: 8px;
 }
 mat-card-title{
-    padding: 0.3em 0.9em 0.3em 0.9em;
+    padding: 0em;
+    line-height: 1em;
     font-size:0.9em;
     margin: 0px;
 }
@@ -24,12 +25,13 @@ mat-card-actions{
     grid-template-columns: auto auto;
 }
 .left{
-    width: 7em;
     word-wrap: break-word;
+    font-size: 0.8em;
+    padding-left: 0.3em;
 }
 .right{
-    font-size: 0.9em;
-    width: 8em;
+    font-size: 0.7em;
+    padding-right: 0.3em;
     text-align: right;
 }
 .comments{
@@ -54,7 +56,6 @@ mat-card-actions{
     transition: max-height 0.3s ease-out;
 }
 .comments:hover{
-    font-size: medium;
     min-height: 3em;
     max-height: 8em;
     overflow: auto;

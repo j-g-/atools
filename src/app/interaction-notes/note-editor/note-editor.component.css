@@ -1,24 +1,79 @@
-button{
-    justify-self: right;
+.mat-icon-button {
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    font-size: 1em;
+    margin: 0em;
 }
 .mat-form-field{
     min-width: 3em;
 }
-input{
-    min-width: 3em;
-}
+
+
 .mat-icon{
     font-size: 1em;
 }
-.auth-checkbox{
+/* .auth-checkbox{
     grid-column: span 2;
 }
 .comments-box{
     grid-column: span 3;
+} */
+.container{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
 }
-.grid4{
-    margin: 4px;
+.left-side{
+    display: flex;
+    padding-left: 0.5em;
+    flex-direction: column;
+    width: 7.5em;
+    flex: 0;
 }
-label{
+.right-side{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    padding-right: 0.5em
+}
+.info-entry {
+    height: 2.5em;
+    width: 7.5em;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: auto 2em;
+    grid-template-rows: 1em 1.5em;
+    margin-bottom: 0.5em;
+    grid-column-start: 1;
+}
+mat-checkbox{
+    grid-column-start: 1;
+    width: 6em;
     font-size: small;
+}
+
+.info-label{
+    grid-column: span 2;
+    grid-row: span 1;
+    font-size: small;
+}
+select{
+    min-width: 6em ;
+}
+input{
+    min-width: 6em;
+    border: none;
+    border-bottom: 2px solid black;
+}
+.comments-box{
+    display: grid;
+    grid-template-columns: auto 1.5em;
+    grid-template-rows: 1.5em auto;
+    flex:1;
+}
+textarea{
+    grid-column: span 2;
+    resize: none;
+    overflow: auto;
 }
