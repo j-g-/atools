@@ -5,10 +5,6 @@
     grid-template-columns: auto 48px;
     padding: 8px;
 }
-textarea {
-    box-sizing: border-box;
-    justify-self: flex-end;
-}
 button{
     justify-self: right;
 }
@@ -36,15 +32,64 @@ button{
 .day{
     font-weight: bold;
     line-height: 1em;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 .day-text{
     line-height: 1em;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 .mat-button-toggle{
-    font-size: 0.7em;
+    font-size: 0.6em;
+    padding: 0.5em ;
 }
 .mat-form-field{
     min-width: 5em;
+}
+.comments-box{
+    display: grid;
+    grid-template-columns: auto 1.5em;
+    grid-template-rows: 1.5em auto;
+    flex:1;
+}
+textarea{
+    grid-column: span 2;
+    resize: none;
+    overflow: auto;
+}
+.info-entry {
+    height: 2.5em;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: auto 2em;
+    grid-template-rows: 1em 1.5em;
+    margin-bottom: 0.5em;
+    grid-column: span 2;
+}
+mat-checkbox{
+    grid-column-start: 1;
+    width: 6em;
+    font-size: small;
+}
+
+.info-label{
+    grid-column: span 2;
+    grid-row: span 1;
+    font-size: small;
+}
+.mat-icon{
+    font-size: 1em;
+}
+.mat-icon-button {
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    font-size: 1em;
+    margin: 0em;
+    margin-right: 0.2em;
+}
+input{
+    width: 100%;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid black;
 }

@@ -1,32 +1,20 @@
-
-
 <div id="callback-editor">
-  <!-- <textarea name="note-text" id="note-text" rows="10"></textarea> -->
-  <!-- <div id="note-text"></div> -->
   <mat-checkbox [(ngModel)]="currentNote.requiresFollowUp">Requires Follow up</mat-checkbox>
-  <mat-checkbox [(ngModel)]="callbackInfo.useSameInfo">Use same info</mat-checkbox>
-  <div></div>
   <div class="grid4">
-    <mat-form-field>
-      <input  type="text" matInput placeholder="Contact" [(ngModel)]="callbackInfo.contact"/>
-    </mat-form-field>
-    <button tabindex="-1" mat-icon-button> <mat-icon>file_copy</mat-icon> </button>
-    <mat-form-field>
-      <input  type="tel" matInput placeholder="CBR" [(ngModel)]="callbackInfo.callbackPhoneNumber"/>
-    </mat-form-field>
-    <button tabindex="-1" mat-icon-button> <mat-icon>file_copy</mat-icon> </button>
-    <mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="callbackInfo.date">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-
-      <!-- <input  type="date" matInput placeholder="Date" [(ngModel)]="callbackInfo.date"/> -->
-    </mat-form-field>
-    <button tabindex="-1" mat-icon-button> <mat-icon>file_copy</mat-icon> </button>
-    <mat-form-field>
-      <input  type="text" matInput placeholder="Acc. Ref" [(ngModel)]="callbackInfo.accRef"/>
-    </mat-form-field>
-    <button tabindex="-1" mat-icon-button> <mat-icon>file_copy</mat-icon> </button>
+    <div class="info-entry">
+      <label for="currentNote-caller" class="info-label"> Date: </label>
+      <input type="date" placeholder="Date" [(ngModel)]="callbackInfo.date" />
+      <button tabindex="-1" mat-icon-button>
+        <mat-icon>file_copy</mat-icon>
+      </button>
+    </div>
+    <div class="info-entry">
+      <label class="info-label" for="timezone"> Timezone </label>
+      <input type="text" placeholder="Timezone" [(ngModel)]="currentNote.callbackPhoneNumber" #timezone />
+      <button tabindex="-1" mat-icon-button>
+        <mat-icon>file_copy</mat-icon>
+      </button>
+    </div>
     <div id="quick-date-options">
       <mat-button-toggle-group>
         <mat-button-toggle *ngFor="let d of quickDates;let i=index" (click)="setQuickDate(i)">
@@ -44,25 +32,29 @@
         </mat-button-toggle>
       </mat-button-toggle-group>
     </div>
-    <mat-form-field>
-      <input  type="time" matInput placeholder="Time window start" [(ngModel)]="callbackInfo.cbWindowStartTime"/>
-    </mat-form-field>
-    <button tabindex="-1" mat-icon-button> <mat-icon>file_copy</mat-icon> </button>
-    <mat-form-field>
-      <input  type="time" matInput placeholder="Time window end" [(ngModel)]="callbackInfo.cbWindowEndTime"/>
-    </mat-form-field>
-    <button tabindex="-1" mat-icon-button> <mat-icon>file_copy</mat-icon> </button>
-    <div class="time-picker-box">
-    <app-time-range-picker></app-time-range-picker>
-    </div>
+      <div class="info-entry">
+        <label for="currentNote-caller" class="info-label"> Time start: </label>
+        <input type="time" placeholder="Time window start" [(ngModel)]="callbackInfo.cbWindowStartTime" />
+        <button tabindex="-1" mat-icon-button>
+          <mat-icon>file_copy</mat-icon>
+        </button>
+      </div>
+      <div class="info-entry">
+        <label for="currentNote-caller" class="info-label"> Time end: </label>
+        <input type="time" placeholder="Time window end" [(ngModel)]="callbackInfo.cbWindowEndTime" />
+        <button tabindex="-1" mat-icon-button>
+          <mat-icon>file_copy</mat-icon>
+        </button>
+      </div>
   </div>
-  <div class="comments-container">
-    <mat-form-field>
-      <textarea  matInput placeholder="Comments" rows="4" [(ngModel)]="callbackInfo.comments"></textarea>
-    </mat-form-field>
-    <button tabindex="-1" mat-icon-button> <mat-icon>file_copy</mat-icon> </button>
+      <div class="time-picker-box">
+        <app-time-range-picker [cbi]="callbackInfo" [(timeStart)]="callbackInfo.cbWindowStartTime" [(timeEnd)]="callbackInfo.cbWindowEndTime"></app-time-range-picker>
+      </div>
+  <div class="comments-box">
+    <label class="comments-label">Comments </label>
+    <button tabindex="-1" mat-icon-button>
+      <mat-icon>file_copy</mat-icon>
+    </button>
+    <textarea placeholder="Comments" rows="10" [(ngModel)]="currentNote.comments"></textarea>
   </div>
-  <mat-checkbox>AB </mat-checkbox>
-  <mat-checkbox>BC </mat-checkbox>
-  <mat-checkbox  [(ngModel)]="callbackInfo.completed">Completed </mat-checkbox>
-</div>
+  <mat-checkbox [(ngModel)]="callbackInfo.completed">Completed </mat-checkbox>

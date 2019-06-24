@@ -1,3 +1,25 @@
-<p>
-  time-range-picker works!
-</p>
+<h4>Time Picker</h4>
+<div class="tp-grid">
+  <!-- AM hours display -->
+  <div class="hd-am"> <div class="container" [innerHTML]="getHours('AM')"> </div> </div>
+  <!-- AM minute intervals display -->
+  <div [ngClass]="{'mi': true,'m-am': true, 'selected': false}"
+   *ngFor="let mi of getMinIntervalsAM(); let i=index" matTooltip="{{mi[0]}} - {{mi[1]}}" id="mi-{{i}}"></div>
+  <!-- AM hour intervals display -->
+  <div [ngClass]="{'hi': true,'h-am': true, 'selected': false}"
+   *ngFor="let hi of getHourIntervalsAM(); let i=index" 
+   id="hi-{{i}}" 
+   matTooltip="{{hi[0]}}:00 - {{hi[1]}}:00" (click)="selectHourInterval(i)"></div>
+
+
+  <!-- PM hour intervals display -->
+  <div [ngClass]="{'hi': true,'h-pm': true, 'selected': false}"
+   *ngFor="let hi of getHourIntervalsPM(); let i=index" id="hi-{{12 + i}}" 
+   matTooltip="{{hi[0]}}:00 - {{hi[1]}}:00" (click)="selectHourInterval(12+i)"></div>
+  <!-- PM minute intervals display -->
+  <div [ngClass]="{'mi': true, 'm-pm': true, 'selected': false}" 
+      *ngFor=" let mi of getMinIntervalsPM(); let i=index" 
+      matTooltip="{{mi[0]}} - {{mi[1]}}" id="mi-{{i+48}}"></div>
+  <!-- PM hours display -->
+  <div class="hd-pm"> <div class="container" [innerHTML]="getHours('PM')"> </div> </div>
+</div>

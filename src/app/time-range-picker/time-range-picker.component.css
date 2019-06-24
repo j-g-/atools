@@ -1,0 +1,77 @@
+.h-am{
+    grid-column: span 4;
+    background: lightyellow;
+    border: 0.1em solid goldenrod;
+    font-size: 0.8em;
+    font-family: sans-serif;
+    padding: 0px;
+}
+.h-pm{
+    padding: 0px;
+    font-family: sans-serif;
+    font-size: 0.8em;
+    grid-column: span 4;
+    background: lightskyblue;
+    border: 0.1em solid steelblue;
+}
+.m-am{
+    grid-column: span 1;
+    background: lightgoldenrodyellow;
+    border: 0.1em solid goldenrod;
+}
+.hi{
+}
+.hi:hover{ background: greenyellow !important; 
+    border: 0.2em solid  green !important;
+}
+.mi {
+}
+.mi:hover{
+    background: greenyellow !important;
+    border: 0.2em solid green !important;
+}
+.m-pm{
+    grid-column: span 1;
+    background: lightblue;
+    border: 0.1em solid steelblue;
+}
+.tp-grid{
+    font-size: 0.6em;
+    display: grid;
+    grid-template-columns: repeat(48, 1fr);
+    grid-template-rows:  2.4em repeat(4,1.5em) 2.4em;
+    line-height: 1em;
+}
+.hd-am{
+    grid-column: span 48;
+    display: flex;
+    flex-direction: row;
+}
+.hd-pm{
+    grid-column: span 48;
+}
+.container{
+    flex: 1;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: row;
+    margin-left: -0.75em;
+    margin-right: -0.75em;
+}
+.selected{ 
+    color: white;
+    border-width: 0.2em;
+    border-color: black;
+}
+.selected.h-am{
+    background: goldenrod;
+}
+.selected.h-pm{
+    background: steelblue;
+}
+.selected.m-am{
+    background: goldenrod;
+}
+.selected.m-pm{
+    background: steelblue;
+}

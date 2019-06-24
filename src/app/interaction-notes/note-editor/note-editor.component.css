@@ -8,6 +8,12 @@
 .mat-form-field{
     min-width: 3em;
 }
+.grid4{
+    flex: 1;
+    line-height: 1em;
+    grid-template-rows: repeat(3, 3em) auto;
+    padding: 0.5em;
+}
 
 
 .mat-icon{
@@ -38,14 +44,13 @@
     padding-right: 0.5em
 }
 .info-entry {
-    height: 2.5em;
-    width: 7.5em;
     display: grid;
     grid-auto-flow: row;
     grid-template-columns: auto 2em;
     grid-template-rows: 1em 1.5em;
     margin-bottom: 0.5em;
-    grid-column-start: 1;
+    grid-column: span 2;
+    height: 3em;
 }
 mat-checkbox{
     grid-column-start: 1;
@@ -63,6 +68,7 @@ select{
 }
 input{
     min-width: 6em;
+    background: transparent;
     border: none;
     border-bottom: 2px solid black;
 }
@@ -70,7 +76,7 @@ input{
     display: grid;
     grid-template-columns: auto 1.5em;
     grid-template-rows: 1.5em auto;
-    flex:1;
+    grid-column: span 4;
 }
 textarea{
     grid-column: span 2;

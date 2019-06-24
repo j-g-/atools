@@ -87,3 +87,25 @@ div.mat-tab-body-wrapper{
     height: 3em !important ;
     font-size: 0.8em;
 }
+
+div.mat-button-toggle-label-content{
+    padding: 0.2em !important;
+}
+
+.spacer{
+    flex: 1;
+    margin-top: 0.75em;
+    height: 1px;
+    justify-self: center;
+    background: gray;
+}
+.hour-label{
+    padding-top: 0.25em;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+    min-width: 1.5em;
+    min-height:  1.5em;
+    max-width: 1.5em;
+    max-height:  1.5em;
+    font-size: 1em;
+}

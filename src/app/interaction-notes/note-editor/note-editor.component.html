@@ -1,5 +1,4 @@
-<div class="container">
-  <div class="left-side">
+<div class="grid4">
   <div class="info-entry">
     <label for="currentNote-caller" class="info-label"> Spoke to: </label>
     <input type="text" placeholder="Name" [(ngModel)]="currentNote.caller" />
@@ -23,29 +22,32 @@
   </div>
   <div class="info-entry">
     <label class="info-label" for="accPhoneNumber"> Tel. # </label>
-    <input type="text" placeholder="Tel #" [(ngModel)]="currentNote.accPhoneNumber" #accPhoneNumber/>
+    <input type="text" placeholder="Tel #" [(ngModel)]="currentNote.accPhoneNumber" #accPhoneNumber />
     <button tabindex="-1" mat-icon-button>
       <mat-icon>file_copy</mat-icon>
     </button>
   </div>
   <mat-checkbox class="auth-checkbox" [(ngModel)]="currentNote.auth"> Authenticated </mat-checkbox>
-  <div class="info-entry" *ngIf="currentNote.auth">
-    <label class="info-label">Auth. method: </label>
-    <select [(ngModel)]="currentNote.authInfo" #authInfo>
-      <option value="PIN">PIN</option>
-      <option value="IVR">IVR</option>
-      <option value="personal info">personal info</option>
-      <option value="last agent">last agent</option>
-      <option value="Exception Procedure">Exception Procedure</option>
-    </select>
+  <button tabindex="-1" mat-icon-button>
+    <mat-icon>visibility</mat-icon>
+  </button>
+  <div>
+    <div class="info-entry" *ngIf="currentNote.auth">
+      <label class="info-label">Auth. method: </label>
+      <select [(ngModel)]="currentNote.authInfo" #authInfo>
+        <option value="PIN">PIN</option>
+        <option value="IVR">IVR</option>
+        <option value="personal info">personal info</option>
+        <option value="last agent">last agent</option>
+        <option value="Exception Procedure">Exception Procedure</option>
+      </select>
+    </div>
   </div>
-  </div>
-  <div class="right-side">
   <div class="comments-box">
-  <label class="comments-label">Comments </label>
-  <button tabindex="-1" mat-icon-button> <mat-icon>file_copy</mat-icon> </button>
-  <textarea placeholder="Comments" rows="10" [(ngModel)]="currentNote.comments"></textarea>
+    <label class="comments-label">Comments </label>
+    <button tabindex="-1" mat-icon-button>
+      <mat-icon>file_copy</mat-icon>
+    </button>
+    <textarea placeholder="Comments" rows="10" [(ngModel)]="currentNote.comments"></textarea>
   </div>
-  </div>
-   
 </div>

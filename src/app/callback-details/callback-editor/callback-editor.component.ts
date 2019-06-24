@@ -38,6 +38,8 @@ export class CallbackEditorComponent implements OnInit {
     }
   }
   setQuickDate(index:number){
-    this.callbackInfo.date = this.quickDates[index].toISOString();
+    let d = this.quickDates[index];
+    this.callbackInfo.date =  d.toDateString();
+    console.log(d.toDateString());
   }
 }
