@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { CallbackEditorComponent } from './callback-editor/callback-editor.component';
 import { AngularMaterialImportsModule } from '../angular-material-imports/angular-material-imports.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -21,6 +21,8 @@ import { ReminderCardComponent } from './reminder-card/reminder-card.component';
   exports: [
     CallbackEditorComponent,
     CallbacksBoardComponent
-  ]
+  ],
+  providers: [DatePipe]
+  
 })
 export class CallbackDetailsModule { }

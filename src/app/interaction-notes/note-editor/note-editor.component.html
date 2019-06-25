@@ -28,8 +28,8 @@
     </button>
   </div>
   <mat-checkbox class="auth-checkbox" [(ngModel)]="currentNote.auth"> Authenticated </mat-checkbox>
-  <button tabindex="-1" mat-icon-button>
-    <mat-icon>visibility</mat-icon>
+  <button  (click)="toggleShowAuth()"tabindex="-1" mat-icon-button>
+    <mat-icon>{{(summaryOptions.showAuth)?"visibility": "visibility_off"}}</mat-icon>
   </button>
   <div>
     <div class="info-entry" *ngIf="currentNote.auth">

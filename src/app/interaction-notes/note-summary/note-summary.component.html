@@ -7,8 +7,10 @@
                             agent.signature : 
                             "["+agent.dept+" : "+agent.name+"]"}}</b><br>
     Spoke to: <b>{{note.caller}}</b> Contact: <b>{{note.callbackPhoneNumber}}</b><br>
-    <b>{{note.auth? "Authenticated": "Not authenticated."}}</b>
-    <span *ngIf="note.auth == true"> with <b>{{note.authInfo}}</b>.</span> <br>
+    <div *ngIf="summaryOptions.showAuth">
+      <b>{{note.auth? "Authenticated": "Not authenticated."}}</b>
+      <span *ngIf="note.auth == true"> with <b>{{note.authInfo}}</b>.</span> <br>
+    </div>
     <b>Info</b>:<span class="comments-box">{{note.comments}}</span>
     <br>
     <div *ngIf="note.requiresFollowUp">  <b>Follow up:</b> on {{note.callbackInfo.date | date: 'MM/dd/yyyy'}}

@@ -14,6 +14,7 @@ export class NoteSummaryComponent implements OnInit {
   agent: AgentInfo;
   dateText: string;
   _subscription: any;
+  summaryOptions: any;
 
   constructor(private notesService: IneractionNotesService, private agentInfoService:AgentInfoService) { 
     // this.note.accPhoneNumber = "0123456789"
@@ -22,6 +23,7 @@ export class NoteSummaryComponent implements OnInit {
     //this.dateText = this.note.date.toDateString()
     this.agent = this.agentInfoService.currentAgentInfo;
     this.note = this.notesService.currentNote;
+    this.summaryOptions = this.notesService.summaryOptions;
     this._subscription = 
       notesService.currentNoteChange.subscribe((value) =>{
         this.note = value;

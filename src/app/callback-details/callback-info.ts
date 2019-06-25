@@ -1,5 +1,5 @@
 import { InteractionNote } from '../interaction-notes/interaction-note';
-import { Time } from '@angular/common';
+import { Time, DatePipe, formatDate} from '@angular/common';
 
 export class CallbackInfo {
     useSameInfo:boolean;
@@ -13,21 +13,17 @@ export class CallbackInfo {
     cbWindowEndTime:string;
     date:string;
     severity:number;
-
+    private datePipe: DatePipe;
     constructor(refNoteId:string){
         this.useSameInfo = true;
         let d = new Date();
-        this.date = d.toISOString();
-        let h = d.getHours();
-        let m = d.getMinutes();
-        this.cbWindowStartTime = `${h}:${m}`;
-        this.cbWindowEndTime =  `${h}:${m}`;
-        //this.cbWindowStartTime = "12:00";
-        //this.cbWindowEndTime =  "12:00";
+        this.date = formatDate(d,'yyyy-MM-dd', 'en-US');
+        this.cbWindowStartTime = formatDate(d,'HH:mm', 'en-US');
+        d.setHours(d.getHours()+1);
+        this.cbWindowEndTime =  formatDate(d,'HH:mm', 'en-US');
         this.completed = false;
         this.refNoteId = refNoteId;
         this.severity= 2;
-        //this.updateToSameInfo();
     }
     isToday(){
         let today = new Date();

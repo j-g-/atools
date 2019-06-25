@@ -10,6 +10,7 @@ import { InteractionNote } from "../interaction-note";
 export class NoteEditorComponent implements OnInit {
   currentNote: InteractionNote;
   _subscription: any;
+  summaryOptions:any;
 
   constructor(private notesService: IneractionNotesService) { 
     this.currentNote = notesService.currentNote;
@@ -17,11 +18,15 @@ export class NoteEditorComponent implements OnInit {
       notesService.currentNoteChange.subscribe((value) =>{
         this.currentNote = value;
       });
+    this.summaryOptions = notesService.summaryOptions;
   }
   ngOnInit() {
   }
   ngOnDestroy() {
    //prevent memory leak when component destroyed
     this._subscription.unsubscribe();
+  }
+  toggleShowAuth(){
+    this.summaryOptions.showAuth = !this.summaryOptions.showAuth;
   }
 }

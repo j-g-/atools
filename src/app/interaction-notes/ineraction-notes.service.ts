@@ -11,6 +11,10 @@ export class IneractionNotesService {
   currentNoteChange: Subject<InteractionNote> = new Subject<InteractionNote>();
   notes: InteractionNote[];
   currentIndex: number;
+  summaryOptions = {
+    showAuth: true,
+    showAccInfo: false
+  }
   constructor() {
     this.loadFromLocalStorage();
   }

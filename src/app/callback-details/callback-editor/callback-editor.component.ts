@@ -3,6 +3,7 @@ import { IneractionNotesService } from "../../interaction-notes/ineraction-notes
 import { CallbackInfo } from '../callback-info';
 import { InteractionNote } from 'src/app/interaction-notes/interaction-note';
 import { TimeRangePickerComponent } from "../../time-range-picker/time-range-picker.component";
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-callback-editor',
@@ -14,7 +15,7 @@ export class CallbackEditorComponent implements OnInit {
   currentNote: InteractionNote;
   quickDates: Date[];
   _subscription: any;
-  constructor(private notesService:IneractionNotesService) {
+  constructor(private notesService:IneractionNotesService, private datePipe:DatePipe) {
     this.currentNote = this.notesService.getCurrentNote();
     this.callbackInfo = this.currentNote.callbackInfo;
     this._subscription = 
@@ -39,7 +40,7 @@ export class CallbackEditorComponent implements OnInit {
   }
   setQuickDate(index:number){
     let d = this.quickDates[index];
-    this.callbackInfo.date =  d.toDateString();
-    console.log(d.toDateString());
+    this.callbackInfo.date =  this.datePipe.transform(d, 'yyyy-MM-dd');
+    console.log(this.callbackInfo.date);
   }
 }
